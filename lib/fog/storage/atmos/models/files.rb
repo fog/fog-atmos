@@ -1,6 +1,3 @@
-require 'fog/core/collection'
-require 'fog/atmos/models/storage/file'
-
 module Fog
   module Storage
     class Atmos

@@ -1,13 +1,10 @@
-require 'fog/core/collection'
-require 'fog/atmos/models/storage/directory'
-
 module Fog
   module Storage
     class Atmos
       class Directories < Fog::Collection
-        attribute :directory
-
         model Fog::Storage::Atmos::Directory
+
+        attribute :directory
 
         def all
           directory ? ns = directory.key : ns = ''
@@ -23,7 +20,7 @@ module Fog
           load(dirs)
         end
 
-        def get(key, options = {})
+        def get(key, _options = {})
           return nil if key == '' # Root dir shouldn't be retrieved like this.
           key =~ /\/$/ ? ns = key : ns = key + '/'
           res = service.get_namespace ns
