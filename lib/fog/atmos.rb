@@ -1,7 +1,10 @@
-require "fog/atmos/version"
+require 'fog/atmos/version'
+require 'fog/atmos/storage'
 
 module Fog
   module Atmos
-    # Your code goes here...
+    extend Fog::Provider
+
+    service(:storage, 'Storage')
   end
 end
