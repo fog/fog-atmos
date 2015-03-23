@@ -1,4 +1,4 @@
-require 'fog/atmos/version'
+require File.expand_path('../atmos/version', __FILE__)
 require 'fog/core'
 require 'fog/xml'
 
@@ -10,6 +10,6 @@ module Fog
   end
 
   module Storage
-    autoload :Atmos, 'fog/storage/atmos'
+    autoload :Atmos, File.expand_path('../storage/atmos', __FILE__)
   end
 end
